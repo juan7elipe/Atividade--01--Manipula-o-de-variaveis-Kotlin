@@ -1,0 +1,34 @@
+import java.text.DecimalFormat
+
+fun main() {
+
+    val nomeProduto: String = "Veneno"
+    var precoUnitario: Double = 50.00
+    var quantidadeComprada: Int = 10
+    var taxaImposto: Double = 15.0
+    var margemLucro: Double = 20.0
+
+    //----------------------------------------------//
+    var valorTotalSemImpostos = precoUnitario * quantidadeComprada
+    var valorImposto = valorTotalSemImpostos * (taxaImposto / 100)
+    var valorTotalComImpostos = valorTotalSemImpostos + valorImposto
+    var precoVendaNecessario = valorTotalComImpostos * (1 + (margemLucro / 100))
+
+    //------------------------------------//
+    val df = DecimalFormat("R$ #,##0.00");
+    var valorTotalComImpostosFormatado = df.format(valorTotalComImpostos)
+    var precoVendaNecessarioFormatado = df.format(precoVendaNecessario)
+
+    //-----------------------//
+    println("Nome do Produto: " + nomeProduto)
+    println("Preço Unitário: " + df.format(precoUnitario))
+    println("Quantidade Comprada: " + quantidadeComprada)
+    println("Taxa de Imposto: " + taxaImposto + "%")
+    println("Margem de Lucro: " + margemLucro + "%")
+    println("Valor Total sem Impostos: " + df.format(valorTotalSemImpostos))
+    println("Valor do Imposto: " + df.format(valorImposto))
+
+    // --------------------- //
+    var mensagemFinal = String.format("Produto: $nomeProduto - Valor Total com Impostos: $valorTotalComImpostosFormatado - Preço de Venda Sugerido: $precoVendaNecessarioFormatado")
+    println(mensagemFinal)
+}
