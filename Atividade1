@@ -1,0 +1,21 @@
+fun main() {
+
+    var nome: String = "Juan"
+    var idade: Int = 20
+    var altura: Double = 1.68
+    var estudante: Boolean = true
+
+
+   var idadeNova: Int = 5
+   idadeNova = idade + idadeNova
+
+    var altura2 = altura * 2
+
+    println("Idade: $idade")
+    println("Altura: $altura")
+    println("Nome: $nome")
+    println("É Estudante? $estudante")
+    println("Soma das idades: $idadeNova")
+    println("altura dobrada: $altura2")
+    println("Até mais $nome")
+}
